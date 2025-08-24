@@ -22,9 +22,11 @@ body{
     box-shadow: 0 0 10px rgb(0, 0, 0,1);
 }
 .container .input-field{
-    z-index: -999;
-    opacity: 0;
-    position: absolute;
+    font-size: 18px;
+    padding: 2px;
+    width: 70%;
+    height: 30px;
+    margin-bottom: 5px;
 }
 .content-box .text-of-typing{
     max-height: 255px;
@@ -88,11 +90,11 @@ body{
     background: rgb(126, 76, 20);
 }
 /* if correct */
-.text-of-typing p span.correct{
+.text-of-typing p span .correct{
     color: rgb(15, 235, 15);
 }
 /* if not correct */
-.text-of-typing p span.incorrect{
+.text-of-typing p span .incorrect{
     color: rgb(236, 25, 25);
 }
 .text-of-typing p span.active{
@@ -100,6 +102,19 @@ body{
 }
 .text-of-typing p span.active::before{
     content: "";
-    
-
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background: #9af902;
+    animation: blink 1s ease-in-out infinite;
+    opacity: 0;
+}
+@keyframes blink{
+    50%{
+        opacity: 1;
+    }
+}
+.text-of-typing p span{
+    position: relative;
 }
